@@ -284,9 +284,12 @@ services:
           create_host_path: true
     networks:
       - cube-network
+    ports:
+      - 9002:9002
 
   ui:
-    image: ghcr.io/ultravioletrs/cube/ui:latest
+    image: ghcr.io/absmach/magistrala/ui-cube-ai:latest
+    # image: ghcr.io/ultravioletrs/cube/ui:latest
     container_name: cube-ui
     restart: on-failure
     depends_on:
